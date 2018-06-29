@@ -73,11 +73,29 @@ public class Exercicio02 implements ExercicioBaseInterface{
         jButtonTabuada.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               JOptionPane.showMessageDialog(null, "teste");
+                if(jTextFieldNumero.getText().trim().isEmpty()){
+                JOptionPane.showMessageDialog(null,
+                        "Dever ser Informado Um Numero","Exercicio 02",
+                        JOptionPane.ERROR_MESSAGE);
+                jTextFieldNumero.requestFocus();
+                return;
+                }
+                
+                try{
               double numero = Double.parseDouble(jTextFieldNumero.getText())*50;
                jLabelresultado.setText(jTextFieldNumero.getText() + " x 50 = " + numero);
+            
+                }catch(NumberFormatException ex){
+                JOptionPane.showMessageDialog(null,
+                        "Dever ser Informado Um Numero teste","Exercicio 02",
+                        JOptionPane.ERROR_MESSAGE);
+                return;
+                
+                }
             }
         });
+                    
+                    
     }
 
     @Override
