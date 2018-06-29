@@ -37,7 +37,7 @@ public class Exercicio02 implements ExercicioBaseInterface{
     @Override
     public void gerarTela() {
         jFrame = new JFrame("Exercicio 02");
-        jFrame.setDefaultCloseOperation(jFrame.EXIT_ON_CLOSE);
+        jFrame.setDefaultCloseOperation(jFrame.DISPOSE_ON_CLOSE);
         jFrame.setLayout(null);
         jFrame.setSize(260,160);
         jFrame.setResizable(false);

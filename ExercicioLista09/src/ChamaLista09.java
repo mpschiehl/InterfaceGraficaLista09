@@ -50,7 +50,7 @@ public class ChamaLista09 implements ExercicioBaseInterface{
     @Override
     public void gerarTela() {
         jFrame = new JFrame();
-        jFrame.setSize(500, 500);
+        jFrame.setSize(370, 400);
         jFrame.setLayout(null);
         jFrame.setLocationRelativeTo(null);
         jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -99,15 +99,15 @@ public class ChamaLista09 implements ExercicioBaseInterface{
 
     @Override
     public void gerarLocalizacoes() {
-        jButton01.setLocation(10, 10);
-        jButton02.setLocation(120, 10);
-        jButton03.setLocation(230, 10);
-        jButton04.setLocation(10, 120);
-        jButton05.setLocation(120, 120);
-        jButton06.setLocation(230, 120);
-        jButton07.setLocation(10, 230);
-        jButton08.setLocation(120, 230);
-        jButton09.setLocation(230, 230);
+        jButton01.setLocation(15, 10);
+        jButton02.setLocation(125, 10);
+        jButton03.setLocation(235, 10);
+        jButton04.setLocation(15, 120);
+        jButton05.setLocation(125, 120);
+        jButton06.setLocation(235, 120);
+        jButton07.setLocation(15, 230);
+        jButton08.setLocation(125, 230);
+        jButton09.setLocation(235, 230);
     }
 
   
@@ -131,7 +131,13 @@ public class ChamaLista09 implements ExercicioBaseInterface{
     }
 
     private void acaoJButton03() {
-        
+      jButton03.addActionListener(new ActionListener() {
+
+          @Override
+          public void actionPerformed(ActionEvent e) {
+              new exercicio03.Exercicio03();
+          }
+      });
     }
 
     private void acaoJButton04() {
