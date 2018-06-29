@@ -87,7 +87,7 @@ public class Exercicio02 implements ExercicioBaseInterface{
             
                 }catch(NumberFormatException ex){
                 JOptionPane.showMessageDialog(null,
-                        "Dever ser Informado Um Numero teste","Exercicio 02",
+                        "Dever ser Informado Um Numero","Exercicio 02",
                         JOptionPane.ERROR_MESSAGE);
                 return;
                 

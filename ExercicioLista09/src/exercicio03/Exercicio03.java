@@ -6,9 +6,12 @@
 package exercicio03;
 
 import execicio01.ExercicioBaseInterface;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -32,7 +35,7 @@ public Exercicio03(){
     gerarDimensoes();
     gerarLocalizacoes();
     configurarJSCrollPane();
-    //acaoBotao();
+    acaoBotao();
     jFrame.setVisible(true);
 }
 
@@ -93,8 +96,37 @@ public Exercicio03(){
         jTextAreaTabuada.setLineWrap(true);
     }
 
-    /*private void acaoBotao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }*/
+    private void acaoBotao() {
+        jButtonTabuada.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String resultado = "";
+                if(jTexFieldNumero.getText().trim().isEmpty()){
+                JOptionPane.showMessageDialog(null,
+                        "Dever ser Informado Um Numero","Exercicio 03",
+                        JOptionPane.ERROR_MESSAGE);
+                jTexFieldNumero.requestFocus();
+                return;
+                }
+                
+                try{
+                    int numeroDigitado = Integer.parseInt(jTexFieldNumero.getText());
+                    for(int i = 1;i <=20 && i>0;i++){
+                        resultado +=  numeroDigitado +" X " + i + " = " + 
+                                (numeroDigitado*i) + "\n"; 
+                    }
+                    jTextAreaTabuada.setText(resultado);
+            
+                }catch(NumberFormatException ex){
+                JOptionPane.showMessageDialog(null,
+                        "Dever ser Informado Um Numero","Exercicio 02",
+                        JOptionPane.ERROR_MESSAGE);
+                return;
+               
+                }
+            }
+        });
+    }
     
 }
