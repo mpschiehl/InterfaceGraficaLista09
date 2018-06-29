@@ -141,7 +141,13 @@ public class ChamaLista09 implements ExercicioBaseInterface{
     }
 
     private void acaoJButton04() {
-        
+        jButton04.addActionListener(new  ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               new Exercicio04.Exercicio04();
+            }
+        });
     }
 
     private void acaoJButton05() {
