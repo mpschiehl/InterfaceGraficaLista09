@@ -32,3 +32,10 @@ ExercicioLista09/build/classes/.netbeans_update_resources
 ExercicioLista09/nbproject/genfiles.properties
 ExercicioLista09/nbproject/project.properties
 /ExercicioLista09/dist/
+/nbproject/private/
+/build/
+manifest.mf
+nbproject/build-impl.xml
+nbproject/project.xml
+nbproject/project.properties
+build.xml
