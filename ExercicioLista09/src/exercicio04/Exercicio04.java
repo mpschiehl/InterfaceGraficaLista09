@@ -4,12 +4,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Exercicio04;
+package src.exercicio04;
 
 import execicio01.ExercicioBaseInterface;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -29,6 +32,7 @@ public class Exercicio04 implements ExercicioBaseInterface{
         adicionarComponenestes();
         gerarDimensoes();
         gerarLocalizacoes();
+        acaoBotao();
         jFrame.setVisible(true);
     }
 
@@ -63,6 +67,35 @@ public class Exercicio04 implements ExercicioBaseInterface{
         jLabelNumero.setSize(70, 20);
         jTextFieldNumero.setSize(135,20);
         
+    }
+    public void acaoBotao(){
+        jButtonVerificar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                String texto = " ";
+                texto = jTextFieldNumero.getText();
+                int numero = Integer.parseInt(jTextFieldNumero.getText());
+                if(numero%2 == 0){
+                    texto +=" é par ";
+                    
+                }
+                if(numero%2 !=0){
+                    texto +=" é impar ";
+                }
+                if(numero ==0){
+                    texto +=" tambem é um numero neutro ";
+                    
+                }
+                if(numero<0){
+                    texto +=" tambem é um numero negativo ";
+                    
+                }
+                if(numero>0){
+                    texto +=" também é um numero positivo ";
+                }
+                    JOptionPane.showMessageDialog(null,texto,"Exercicio 04",JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
     }
 
     @Override
